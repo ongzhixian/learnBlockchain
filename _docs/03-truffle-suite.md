@@ -5,10 +5,12 @@ Use the Truffle tool suite to test Ethereum contracts before you deploy them to 
 To make your work as a developer easier, develop locally. 
 The tool suite includes Truffle, Ganache, and Drizzle. 
 
-1.  Truffle 
+1.  Truffle
+    Build contracts
 2.  Ganache (pronounce- guh-nash)
+    Local blockchain for development
 3.  Drizzle
-
+    Drizzle makes writing dapp user interfaces more predictable and easier through its collection of front-end libraries.
 
 
 ## Truffle
@@ -53,11 +55,51 @@ The output also displays the blockchain's address.
 We'll use this address to connect to the blockchain. 
 By default, the address is 127.0.0.1:8545.
 
+
+
+## Drizzle
+
+Drizzle is built with JavaScript. 
+
+Has great support for React, and there's also an option to use Vue.js or Angular.
+
+Drizzle helps to synchronize and manage smart contract data. 
+This synchronization is significant so that the blockchain data stays aligned with your app interface. 
+It uses a Redux store. 
+Redux is a state container for JavaScript apps that makes it easy to track all transactions. 
+Plus, it helps applications behave consistently for users and any environment they use.
+
+Drizzle apps interact with smart contacts by using a JSON-RPC layer called the Web3 API.
+
+JSON-RPC is a remote procedure call (RPC) protocol. 
+It's stateless, lightweight, and uses JSON for the payload. 
+JSON-RPC specifies a set of data structures and defines the rules around processing those structures.
+
+To talk to an Ethereum node from a JavaScript application, the Web3 API is needed. 
+Web3 is the Ethereum-compatible JavaScript API and has bindings that are built through the JSON-RPC protocol.
+
+Drizzle is modular, which means you can use as much or as little of the library portions as you want.
+
+The three core packages are:
+
+1.  drizzle: Library you use to instantiate web3, account, and contract. You also use the library to connect the smart contracts to the dapp.
+2.  drizzle-react: Library that makes usable React components by abstracting the core Drizzle functionality.
+3.  drizzle-react-components: Library that includes user interface components for common dapp functions. 
+    This library includes the ContractData, ContractForm, and LoadingContainer React components.
+
+```
+import { Drizzle } from "@drizzle/store";
+import { newContextComponents } from "@drizzle/react-components";
+import { DrizzleContext } from "@drizzle/react-plugin";
+```
+
+
+
 ## Truffle commands
 
 Common commands:
 
-`truffle build`
+`truffle compile`
 `truffle migrate`
 `truffle test`
 

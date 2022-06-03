@@ -40,3 +40,13 @@ Then
     `npm rebuild` to run the build and recompile changes in the app/ folder.
     `npm run start` to start the web-pack development server for React. 
     It opens a new browser window for the React project.
+
+
+
+This wallet-enabled Web3 provider creates your secret mnemonic and connection network address. 
+You'll also need fs to read from your file system.
+
+npm init
+npm install fs
+npm install @truffle/hdwallet-provider
+
